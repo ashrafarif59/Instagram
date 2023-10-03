@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class chip extends StatelessWidget {
   String label;
-  Int
+  
    chip({Key? key,required this.label}) : super(key: key);
 
   @override
