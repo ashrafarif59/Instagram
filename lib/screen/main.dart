@@ -7,6 +7,7 @@ import 'package:badges/badges.dart' as badges;
 import '../component/button.dart';
 import '../component/textField.dart';
 import '../util/Asset.dart';
+import 'search.dart';
 
 class home extends StatefulWidget {
   const home({Key? key}) : super(key: key);
@@ -25,7 +26,7 @@ class _homeState extends State<home> {
 
   final List layout =[
     home1(),
-    home1(),
+    search(),
     home1(),
     home1(),
     home1(),];
@@ -38,15 +39,15 @@ class _homeState extends State<home> {
           type: BottomNavigationBarType.fixed,
           currentIndex: selectIndex,
           onTap: navSelected,
-          selectedItemColor: Colors.cyan,
+          selectedItemColor: Colors.black,
           unselectedItemColor: Colors.black,
           items: [
-            BottomNavigationBarItem(icon: Icon(Icons.home_outlined), label: ''),
-            BottomNavigationBarItem(icon: Icon(Icons.search), label: ''),
+            BottomNavigationBarItem(icon: selectIndex==0 ? Icon(Icons.home) :Icon(Icons.home_outlined), label: ''),
+            BottomNavigationBarItem(icon: Icon(selectIndex==1 ? Icons.search_sharp : Icons.search_off_outlined), label: ''),
             BottomNavigationBarItem(
-                icon: Icon(Icons.add_box_outlined), label: ''),
+                icon: Icon(selectIndex==2 ?Icons.add_box : Icons.add_box_outlined), label: ''),
             BottomNavigationBarItem(
-                icon: Icon(Icons.favorite_border_outlined), label: ''),
+                icon: Icon(selectIndex==3 ? Icons.favorite : Icons.favorite_border_outlined), label: ''),
             BottomNavigationBarItem(
                 icon: CircleAvatar(
                     backgroundImage: AssetImage(
@@ -54,43 +55,7 @@ class _homeState extends State<home> {
                 )),
                 label: '')
           ]),
-      appBar: AppBar(
-        backgroundColor: AppColors.whiteColor,
-        elevation: 0,
 
-        automaticallyImplyLeading: false,
-        title: Image(
-          image: AssetImage(
-            'image/logos.png',
-          ),
-          height: 60,
-        ),
-        centerTitle: true,
-        leading: Icon(
-          Icons.camera_alt_outlined,
-          color: Colors.black,
-        ),
-        actions: [
-
-          Align(
-            alignment: Alignment.center,
-            child: badges.Badge(
-              position: badges.BadgePosition.topEnd(top: -1, end: -1),
-              child: Icon(
-                Icons.connected_tv_outlined,
-                color: Colors.black,
-              ),
-            ),
-          ),
-          SizedBox(
-            width: 2.h,
-          ),
-          Icon(
-            Icons.near_me_outlined,
-            color: Colors.black,
-          ),
-        ],
-      ),
       body: layout[selectIndex]
     );
   }

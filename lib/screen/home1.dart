@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 import 'package:badges/badges.dart' as badges;
 
+import '../util/Colors.dart';
+
 class home1 extends StatefulWidget {
   const home1({Key? key}) : super(key: key);
 
@@ -29,6 +31,43 @@ class _home1State extends State<home1> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: AppColors.whiteColor,
+        elevation: 0,
+
+        automaticallyImplyLeading: false,
+        title: Image(
+          image: AssetImage(
+            'image/logos.png',
+          ),
+          height: 60,
+        ),
+        centerTitle: true,
+        leading: Icon(
+          Icons.camera_alt_outlined,
+          color: Colors.black,
+        ),
+        actions: [
+
+          Align(
+            alignment: Alignment.center,
+            child: badges.Badge(
+              position: badges.BadgePosition.topEnd(top: -1, end: -1),
+              child: Icon(
+                Icons.connected_tv_outlined,
+                color: Colors.black,
+              ),
+            ),
+          ),
+          SizedBox(
+            width: 2.h,
+          ),
+          Icon(
+            Icons.near_me_outlined,
+            color: Colors.black,
+          ),
+        ],
+      ),
       body: Padding(
         padding: const EdgeInsets.symmetric(vertical: 5),
         child: Column(
@@ -91,7 +130,7 @@ class _home1State extends State<home1> {
                   scrollDirection: Axis.horizontal,
                 )),
             Divider(color: Colors.grey.shade400,thickness: 1,),
-            SizedBox(height: 1.h,),
+            SizedBox(height: .1.h,),
             ListTile(
               leading: CircleAvatar(
                 //radius: 35,
@@ -106,7 +145,75 @@ class _home1State extends State<home1> {
               ],),
               subtitle: Text('Tokyo, Japan'),
             ),
-            Image(image: AssetImage('pciture1.PNG'))
+            Container(
+              width: MediaQuery.of(context).size.width,
+              height: 350,
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  fit: BoxFit.fill,
+                  image: AssetImage("image/picture1.PNG"),
+                ),
+              ),
+            ),
+            //Image(image: AssetImage('image/picture1.PNG'),height: 200,width: MediaQuery.of(context).size.width,),
+            SizedBox(height: 1.h,),
+            Container(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Icon(Icons.favorite_border_outlined,size:30),
+                  Icon(Icons.circle_outlined,size:30),
+                  Icon(Icons.near_me_outlined,size:30),
+                  SizedBox(),
+                  SizedBox(),
+                  SizedBox(),
+                  SizedBox(),
+                  SizedBox(),
+                  Icon(Icons.more_horiz,size:30),
+                  SizedBox(),
+                  SizedBox(),
+                  SizedBox(),
+                  SizedBox(),
+                  SizedBox(),
+                  SizedBox(),
+                  SizedBox(),
+                  SizedBox(),
+                  SizedBox(),
+                  SizedBox(),
+                  Icon(Icons.download_for_offline_rounded,size:30),
+                ],
+
+              ),
+            ),
+            SizedBox(height: 1.2.h,),
+            Row(
+              children: [
+                SizedBox(width: 4.w),
+                CircleAvatar(backgroundImage: AssetImage('image/picture1.PNG'),radius: 10,),
+                SizedBox(width: 2.w,),
+                Text('Liked by craig_love and 44,686 others',style: TextStyle(fontSize: 15),),
+
+              ],
+            ),
+            SizedBox(height: 1.h,),
+            Row(
+              children: [
+                SizedBox(width: 4.w,),
+                Flexible(
+                  child: RichText(
+                    text: TextSpan(
+                      style: TextStyle(color: Colors.black, fontSize: 12),
+                      children: <TextSpan>[
+                        TextSpan(text: 'joshua_l ', style: TextStyle(color: Colors.blue)),
+                        TextSpan(text: ' The game in Japan was amazing and I want to share some photos '),
+
+                      ],
+                    ),
+
+                  ),
+                ),
+              ],
+            )
           ],
         ),
       ),
