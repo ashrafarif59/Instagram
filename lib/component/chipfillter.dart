@@ -1,47 +1,34 @@
 import 'package:flutter/material.dart';
+import 'package:sizer/sizer.dart';
 
-class chip extends StatelessWidget {
+class chipWidget extends StatelessWidget {
   String label;
-  
-   chip({Key? key,required this.label}) : super(key: key);
+  bool iconyn;
+  IconData iconName;
+
+  chipWidget({Key? key,required this.label,this.iconyn = false,this.iconName=Icons.arrow_circle_right}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 10),
-      child: Container
-        (
-        child:Row(
-            children: [
-              Text(label ,style: TextStyle(fontSize: 10,fontWeight: FontWeight.bold),),
-        ],
+      padding: const EdgeInsets.symmetric(horizontal: 4),
+      child: Container(
+        height: 5.h,
+        decoration: BoxDecoration(
+          border: Border.all(color: Colors.grey),
+            borderRadius:  BorderRadius.circular(10.0),
         ),
-        height: 25,
-      width: 35,
-      decoration: BoxDecoration(
-              border: Border.all(
-                  color: Colors.grey.shade400
-              )
+        child: Center(
+          child: Chip(label: Text(label,style: TextStyle(fontSize: 12),),
+          backgroundColor: Colors.white,
+            shadowColor: Colors.grey,
+            avatar: iconyn == true ?CircleAvatar(child: Icon(iconName,size: 20,color: Colors.black,),backgroundColor: Colors.white,)
+            :null,
+            //shape:
+          ),
         ),
       ),
     );
-    //   Padding(
-    //   padding: const EdgeInsets.symmetric(horizontal: 20),
-    //   child: Container(child:
-    //   Padding(
-    //     padding: const EdgeInsets.symmetric(horizontal: 5),
-    //     child: Row(children: [
-    //       //Icon(IconYn=true ?Icons.add_box_outlined : Icons.add,size: 14,),
-    //       // SizedBox(width: 3,),
-    //       Text(label ,style: TextStyle(fontSize: 10,fontWeight: FontWeight.bold),),
-    //     ],),
-    //   ),
-    //     height: 25,
-    //     decoration: BoxDecoration(
-    //         border: Border.all(
-    //             color: Colors.grey.shade400
-    //         )
-    //     ),),
-    // );
+    
   }
 }

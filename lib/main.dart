@@ -15,20 +15,15 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return  Sizer(
-        builder: (context, orientation, deviceType) {
-          return MaterialApp(
-            debugShowCheckedModeBanner: false,
-            title: 'Instagram Clone',
-            theme :ThemeData.light().copyWith(
-              scaffoldBackgroundColor: AppColors.whiteColor
-            ),
-            initialRoute: RouteName.previousLogin,
-            onGenerateRoute: Routes.generateRoute,
-          );
-        }
-    );
+    return Sizer(builder: (context, orientation, deviceType) {
+      return MaterialApp(
+        debugShowCheckedModeBanner: false,
+        title: 'Instagram Clone',
+        theme: ThemeData.light()
+            .copyWith(scaffoldBackgroundColor: AppColors.whiteColor),
+        initialRoute: RouteName.previousLogin,
+        onGenerateRoute: Routes.generateRoute,
+      );
+    });
   }
 }
-
-

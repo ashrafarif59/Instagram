@@ -6,7 +6,6 @@ import '../util/Asset.dart';
 import '../util/Colors.dart';
 import '../util/routeName.dart';
 
-
 class previousLogin extends StatelessWidget {
   const previousLogin({Key? key}) : super(key: key);
 
@@ -14,11 +13,11 @@ class previousLogin extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
-        appBar: AppBar(
+      appBar: AppBar(
         backgroundColor: AppColors.whiteColor,
         elevation: 0,
-          automaticallyImplyLeading: false,
-        ),
+        automaticallyImplyLeading: false,
+      ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 30),
         child: Column(
@@ -28,34 +27,51 @@ class previousLogin extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                 Image(image: AssetImage('image/logos.png',),),
-                  SizedBox(height: 3.h,),
-                  CircleAvatar(backgroundImage:  AssetImage('image/profilepic.png',),
-                  radius: 50,),
-                  SizedBox(height: 1.h,),
-                  Text('jacob_w',
-                  style: TextStyle(
-                  fontSize: 14,
-                    fontWeight: FontWeight.bold
-                  ),),
-                  SizedBox(height: 2.h,),
+                  Image(
+                    image: AssetImage(
+                      'image/logos.png',
+                    ),
+                  ),
+                  SizedBox(
+                    height: 3.h,
+                  ),
+                  CircleAvatar(
+                    backgroundImage: AssetImage(
+                      'image/profilepic.png',
+                    ),
+                    radius: 50,
+                  ),
+                  SizedBox(
+                    height: 1.h,
+                  ),
+                  Text(
+                    'jacob_w',
+                    style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
+                  ),
+                  SizedBox(
+                    height: 2.h,
+                  ),
                   PrimaryButton(
                       title: 'Login',
                       backgroundColor: Colors.blue,
                       iconYN: false,
                       bordercircular: 10,
-                      height :5.h,
+                      height: 5.h,
                       fontsize: 14,
                       onPress: () {
                         Navigator.pushNamed(context, RouteName.Login);
                       }),
-                  SizedBox(height: 3.h,),
-                  Text('Switch accounts',
+                  SizedBox(
+                    height: 3.h,
+                  ),
+                  Text(
+                    'Switch accounts',
                     style: TextStyle(
-                        fontSize: 14,
-                        fontWeight: FontWeight.bold,
+                      fontSize: 14,
+                      fontWeight: FontWeight.bold,
                       color: Colors.blue,
-                    ),)
+                    ),
+                  )
                 ],
               ),
             ),
@@ -63,23 +79,26 @@ class previousLogin extends StatelessWidget {
               height: 12.h,
               child: Column(
                 children: [
-                  Divider(thickness: 1,),
-                  SizedBox(height:1.5.h),
+                  Divider(
+                    thickness: 1,
+                  ),
+                  SizedBox(height: 1.5.h),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text('Don’t have an account? ',
-                        style:
-                        TextStyle(fontSize: 12,
-                        fontFamily: 'Poppins',
-                        color: Colors.grey.shade800),),
-
-                      Text('Sign up.',
-                        style:
-                        TextStyle(fontSize: 12,
+                      Text(
+                        'Don’t have an account? ',
+                        style: TextStyle(
+                            fontSize: 12,
                             fontFamily: 'Poppins',
-                           fontWeight: FontWeight.bold
-                        ),
+                            color: Colors.grey.shade800),
+                      ),
+                      Text(
+                        'Sign up.',
+                        style: TextStyle(
+                            fontSize: 12,
+                            fontFamily: 'Poppins',
+                            fontWeight: FontWeight.bold),
                       ),
                     ],
                   )

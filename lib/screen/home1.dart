@@ -28,13 +28,13 @@ class _home1State extends State<home1> {
     'craig_love',
     'newimag',
   ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
+      appBar: AppBar(
         backgroundColor: AppColors.whiteColor,
         elevation: 0,
-
         automaticallyImplyLeading: false,
         title: Image(
           image: AssetImage(
@@ -48,7 +48,6 @@ class _home1State extends State<home1> {
           color: Colors.black,
         ),
         actions: [
-
           Align(
             alignment: Alignment.center,
             child: badges.Badge(
@@ -73,7 +72,10 @@ class _home1State extends State<home1> {
           padding: const EdgeInsets.symmetric(vertical: 5),
           child: Column(
             children: [
-              Divider(color: Colors.grey.shade400,thickness: 1,),
+              Divider(
+                color: Colors.grey.shade400,
+                thickness: 1,
+              ),
               Container(
                   height: 100,
                   //   color: Colors.red,
@@ -103,27 +105,30 @@ class _home1State extends State<home1> {
                                 child: CircleAvatar(
                                   radius: 30,
                                   backgroundImage: AssetImage(profile[index]),
-                                  child:index == 1
-                                      ? badges.Badge
-                                    (
-                                      showBadge :false,
-                                      stackFit: StackFit.loose,
-                                    child: Container(
-
-                                      child: Padding(
-                                        padding: const EdgeInsets.all(3.0),
-                                        child: Text('Live',style: TextStyle(color: Colors.white,fontSize: 12,fontWeight: FontWeight.bold),),
-                                        ),
-                                      decoration: BoxDecoration(
-                                        color: Colors.pinkAccent,
-                                        border: Border.all(
-                                          color: Colors.white
+                                  child: index == 1
+                                      ? badges.Badge(
+                                          showBadge: false,
+                                          stackFit: StackFit.loose,
+                                          child: Container(
+                                            child: Padding(
+                                              padding:
+                                                  const EdgeInsets.all(3.0),
+                                              child: Text(
+                                                'Live',
+                                                style: TextStyle(
+                                                    color: Colors.white,
+                                                    fontSize: 12,
+                                                    fontWeight:
+                                                        FontWeight.bold),
+                                              ),
+                                            ),
+                                            decoration: BoxDecoration(
+                                                color: Colors.pinkAccent,
+                                                border: Border.all(
+                                                    color: Colors.white)),
+                                          ),
                                         )
-                                      ),
-                                    ),
-                                  )
-                                        : null,
-
+                                      : null,
                                 ),
                               ),
                             ),
@@ -135,24 +140,43 @@ class _home1State extends State<home1> {
                     itemCount: profile.length,
                     scrollDirection: Axis.horizontal,
                   )),
-             // Divider(color: Colors.grey.shade400,thickness: 1,),
-              SizedBox(height: .01.h,),
+              Divider(
+                color: Colors.grey.shade400,
+                thickness: 1,
+              ),
+              SizedBox(
+                height: .01.h,
+              ),
               ListTile(
                 leading: CircleAvatar(
                   //radius: 35,
                   backgroundImage: AssetImage('image/profile4.jpg'),
-
                 ),
-                trailing: Icon(Icons.more_horiz,color: Colors.black,),
-                title: Row(children: [
-                  Text('joshua_l',style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold),),
-                  SizedBox(width: 2,),
-                  Icon(Icons.check_circle,color: Colors.blueAccent,size: 15,)
-                ],),
+                trailing: Icon(
+                  Icons.more_horiz,
+                  color: Colors.black,
+                ),
+                title: Row(
+                  children: [
+                    Text(
+                      'joshua_l',
+                      style:
+                          TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                    ),
+                    SizedBox(
+                      width: 2,
+                    ),
+                    Icon(
+                      Icons.check_circle,
+                      color: Colors.blueAccent,
+                      size: 15,
+                    )
+                  ],
+                ),
                 subtitle: Text('Tokyo, Japan'),
               ),
               Container(
-                width: MediaQuery.of(context).size.width,
+                width: 100.w,
                 height: 350,
                 decoration: BoxDecoration(
                   image: DecorationImage(
@@ -162,63 +186,57 @@ class _home1State extends State<home1> {
                 ),
               ),
               //Image(image: AssetImage('image/picture1.PNG'),height: 200,width: MediaQuery.of(context).size.width,),
-              SizedBox(height: 1.h,),
-              Container(
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    Icon(Icons.favorite_border_outlined,size:30),
-                    Icon(Icons.circle_outlined,size:30),
-                    Icon(Icons.near_me_outlined,size:30),
-                    SizedBox(),
-                    SizedBox(),
-                    SizedBox(),
-                    SizedBox(),
-                    SizedBox(),
-                    Icon(Icons.more_horiz,size:30),
-                    SizedBox(),
-                    SizedBox(),
-                    SizedBox(),
-                    SizedBox(),
-                    SizedBox(),
-                    SizedBox(),
-                    SizedBox(),
-                    SizedBox(),
-                    SizedBox(),
-                    SizedBox(),
-                    Icon(Icons.download_for_offline_rounded,size:30),
-                  ],
-
-                ),
+              SizedBox(
+                height: 1.h,
               ),
-              SizedBox(height: 1.2.h,),
+              Row(
+                children: [
+                  Icon(Icons.favorite_border_outlined, size: 30),
+                  Icon(Icons.circle_outlined, size: 30),
+                  Icon(Icons.near_me_outlined, size: 30),
+                  Spacer(),
+                  Icon(Icons.more_horiz, size: 30),
+                  Spacer(),
+                  Icon(Icons.download_for_offline_rounded, size: 30),
+                ],
+              ),
+              SizedBox(
+                height: 1.2.h,
+              ),
               Row(
                 children: [
                   SizedBox(width: 4.w),
-                  CircleAvatar(backgroundImage: AssetImage('image/picture1.PNG'),radius: 10,),
-                  SizedBox(width: 2.w,),
-                  Text('Liked by craig_love and 44,686 others',style: TextStyle(fontSize: 15),),
-
-                ],
-              ),
-              SizedBox(height: 1.h,),
-              Row(
-                children: [
-                  SizedBox(width: 4.w,),
-                  Flexible(
-                    child: RichText(
-                      text: TextSpan(
-                        style: TextStyle(color: Colors.black, fontSize: 12),
-                        children: <TextSpan>[
-                          TextSpan(text: 'joshua_l ', style: TextStyle(color: Colors.blue)),
-                          TextSpan(text: ' The game in Japan was amazing and I want to share some photos '),
-
-                        ],
-                      ),
-
-                    ),
+                  CircleAvatar(
+                    backgroundImage: AssetImage('image/picture1.PNG'),
+                    radius: 10,
+                  ),
+                  SizedBox(
+                    width: 2.w,
+                  ),
+                  Text(
+                    'Liked by craig_love and 44,686 others',
+                    style: TextStyle(fontSize: 15),
                   ),
                 ],
+              ),
+              SizedBox(
+                height: 1.h,
+              ),
+              Padding(
+                padding: EdgeInsets.only(left: 8.0),
+                child: RichText(
+                  text: TextSpan(
+                    style: TextStyle(color: Colors.black, fontSize: 12),
+                    children: <TextSpan>[
+                      TextSpan(
+                          text: 'joshua_l ',
+                          style: TextStyle(color: Colors.blue)),
+                      TextSpan(
+                          text:
+                              ' The game in Japan was amazing and I want to share some photos '),
+                    ],
+                  ),
+                ),
               )
             ],
           ),
